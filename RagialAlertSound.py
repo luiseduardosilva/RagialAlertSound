@@ -9,12 +9,10 @@ import requests, re, time, os
 # Strawberry(Morango) -> http://ragi.al/item/iRO-Classic/QgI
 url = "http://ragi.al/item/iRO-Classic/QgI"
 
-# Requesição | Request
-req = requests.get(url)
-
-vending_now = re.search(r'Vending Now', req.text)
-
 while True:
+	# Requesição | Request
+	req = requests.get(url)
+	vending_now = re.search(r'Vending Now', req.text)
 	if req.status_code == 200:
 		try:
 			print(vending_now.group())
