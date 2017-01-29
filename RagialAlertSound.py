@@ -12,7 +12,7 @@ url = "http://ragi.al/item/iRO-Classic/QgI"
 # Requesição | Request
 req = requests.get(url)
 
-vending_now = re.search(r'asd Now', req.text)
+vending_now = re.search(r'Vending Now', req.text)
 
 while True:
 	if req.status_code == 200:
